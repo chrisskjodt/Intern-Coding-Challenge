@@ -1,7 +1,7 @@
 # Sensor Data Correlation Coding Challenge
 
 ## Overview
-My submission to the Canadian UAVs Intern Coding Challenge. This project correlates sensor data from two different sources (CSV and JSON) based on geographic proximity. It helps identify potential anomaly detections by matching sensor readings within a 100-meter accuracy range.
+My submission to the Canadian UAVs Intern Coding Challenge. This project correlates sensor data from two different sources (CSV and JSON) based on geographic proximity. It helps identify potential anomaly detections by matching sensor readings within a 100-meter accuracy range. Thank you for your consideration!
 
 
 ### Key Features
@@ -22,7 +22,7 @@ My submission to the Canadian UAVs Intern Coding Challenge. This project correla
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/chrisskjodt/Intern-Coding-Challenge.git
-cd 
+cd Intern-Coding-Challenge\CodingChallenge
 ```
 
 ### 2. Install Dependencies
@@ -86,5 +86,3 @@ Uses the Haversine formula to calculate geographic distance, accounting for the 
 
 ## Contact
 Timothy Skjodt - timothy.skjodt@ucalgary.ca
-
-Project Link: [https://github.com/chrisskjodt/Intern-Coding-Challenge](https://github.com/chrisskjodt/Intern-Coding-Challenge)
