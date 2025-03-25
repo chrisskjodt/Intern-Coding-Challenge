@@ -1,13 +1,90 @@
-# CUAVs-Coding-Challenge
+# Sensor Data Correlation Coding Challenge
 
-Challenge Overview:
+## Overview
+My submission to the Canadian UAVs Intern Coding Challenge. This project correlates sensor data from two different sources (CSV and JSON) based on geographic proximity. It helps identify potential anomaly detections by matching sensor readings within a 100-meter accuracy range.
 
-At Canadian UAVs, we handle large amounts of geospatial data, which is the focus of this challenge. The task involves correlating data from two sensors that detect anomalies. However, the sensors are not highly accurate, resulting in false positives and variations in their location readings. Your challenge is to associate the sensor readings based on their coordinates to identify common signals that may have been detected by both sensors. This correlation increases the likelihood that the signal is a genuine detection rather than a false positive.
 
-Input Data:
+### Key Features
+- Reads sensor data from CSV and JSON files
+- Calculates geographic distance using Haversine formula
+- Correlates sensor readings within 100 meters
+- Handles coordinate validation
+- Generates a JSON output of correlated sensor IDs
 
-The two sensors provide different output formats: one sensor outputs data in CSV format, and the other outputs data in JSON format. Please refer to the sample data for the exact format of each sensor's output. Both sensors assign a unique ID to each reading, but note that different sensors may use the same IDs. The sensor readings include location coordinates in decimal degrees, using the WGS 84 format, representing where the anomaly was detected. The sensors have an accuracy of 100 meters, meaning that the reported location is within 100 meters of the actual anomaly location.
+## Prerequisites
+- .NET SDK
+- NuGet Packages:
+  - Newtonsoft.Json
+  - CsvHelper
 
-Output:
+## Installation
 
-The output should consist of pairs of IDs, where one ID is from the first sensor, and the second ID is from the second sensor.
+### 1. Clone the Repository
+```bash
+git clone https://github.com/chrisskjodt/Intern-Coding-Challenge.git
+cd 
+```
+
+### 2. Install Dependencies
+```bash
+dotnet restore
+```
+
+## Usage
+
+### Input Files
+Place your sensor data files in the project root (provided data files included already):
+- `SensorData1.csv`: First sensor's data in CSV format
+- `SensorData2.json`: Second sensor's data in JSON format
+
+### CSV/JSON Format
+#### CSV Format
+```
+id,latitude,longitude
+8,50.96850558,-114.3583294
+23,51.82328031,-114.9146874
+```
+
+#### JSON Format
+```json
+[
+  {
+    "Id": 29,
+    "Latitude": 36.08572847,
+    "Longitude": 138.78546118
+  }
+]
+```
+
+### Running the Program
+```bash
+dotnet run
+```
+
+### Output
+- Console will display correlated sensor IDs
+- Generates `CorrelatedSensors.json` in the project root
+
+## How It Works
+1. Reads sensor data from CSV and JSON files
+2. Validates coordinate values
+3. Calculates geographic distance between readings
+4. Identifies readings within 100 meters
+5. Outputs correlated sensor IDs
+
+## Distance Calculation
+Uses the Haversine formula to calculate geographic distance, accounting for the Earth's curvature.
+
+## Error Handling
+- Validates coordinate ranges
+- Handles missing or invalid input files
+- Provides detailed error messaging
+
+## Performance Considerations
+- O(n²) correlation algorithm
+- Breaks after first match to optimize performance
+
+## Contact
+Timothy Skjodt - timothy.skjodt@ucalgary.ca
+
+Project Link: [https://github.com/chrisskjodt/Intern-Coding-Challenge](https://github.com/chrisskjodt/Intern-Coding-Challenge)

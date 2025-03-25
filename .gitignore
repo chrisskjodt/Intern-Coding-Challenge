@@ -1,0 +1,27 @@
+# Ignore build directories
+bin/
+obj/
+
+# Ignore compiled files
+*.dll
+*.exe
+*.pdb
+*.cache
+
+# Ignore NuGet files
+*.nuget.cache
+*.nuget.dgspec.json
+*.nuget.g.props
+*.nuget.g.targets
+project.assets.json
+project.nuget.cache
+
+# Ignore build configuration files
+*.runtimeconfig.json
+*.deps.json
+*.sourcelink.json
+
+# Ignore temporary files
+CodingCh.A8E8C132.Up2Date
+*.editorconfig
+.NETCoreApp,Version=v9.0.AssemblyAttributes.cs
